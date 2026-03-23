@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.nb.environment.InstanceInformationService;
 import br.com.nb.model.Exchange;
 import br.com.nb.repository.ExchangeRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name="Exchange Endpoint")
 @RestController
 @RequestMapping("exchange-service")
 public class ExchangeController {
@@ -23,6 +26,7 @@ public class ExchangeController {
     @Autowired
     ExchangeRepository repository;
 
+    @Operation(summary = "Get an exchange form amount of currency")
    // http://localhost:8000/exchange-service/5/USD/BRL
    @GetMapping(value = "/{amount}/{from}/{to}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Exchange getExchange(
