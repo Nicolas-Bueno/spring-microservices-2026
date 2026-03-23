@@ -3,5 +3,17 @@ server:
 spring:
   application:
     name: api-gateway
-#
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+          - id: book-service
+            uri: lb://book-service
+            predicates:
+            - Path=/book-service/**
+          - id: exchange-service
+            uri: lb://exchange-service
+            predicates:
+            - Path=/exchange-service/**
           
