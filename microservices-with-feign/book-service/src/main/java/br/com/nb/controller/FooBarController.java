@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import io.github.resilience4j.retry.annotation.Retry;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name= "Foo Bar Endpoint")
 @RestController
 @RequestMapping("book-service")
 public class FooBarController {
