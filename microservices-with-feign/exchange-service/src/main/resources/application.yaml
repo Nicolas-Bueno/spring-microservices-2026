@@ -24,4 +24,5 @@ springdoc:
     path: /exchange-service/v3/api-docs
   swagger-ui:
     url: /exchange-service/v3/api-docs
+  override-server-url: true
 

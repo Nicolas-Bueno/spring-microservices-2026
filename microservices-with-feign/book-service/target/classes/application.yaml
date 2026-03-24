@@ -31,3 +31,4 @@ springdoc:
     path: /book-service/v3/api-docs
   swagger-ui:
     url: /book-service/v3/api-docs
+  override-server-url: true
